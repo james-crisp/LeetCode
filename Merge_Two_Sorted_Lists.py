@@ -15,19 +15,19 @@ class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         
         #Linked list problem
-        
+        list3 = ListNode()
+            
         def iterList(lister):
             if lister == None:
                 return
             else:
-                list3.append(lister.val)
+                list3.val = lister.val
                 iterList(lister.next)
         
         iterList(list1)
         iterList(list2)
         
-        list3.sort()
-        
         return list3
             
+        
         

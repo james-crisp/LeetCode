@@ -18,11 +18,12 @@ class Solution:
         #recursive solve with binary tree
         
         
-        def check(val):
-            val.left
-            if check(root.left) == check(root.right):
-                root
-                
-        check(root)
+        def check(node):       
+            if check(node.left) == check(node.right):   
+                return True
+            else:
+                return node.val
+        
+        
         
         return

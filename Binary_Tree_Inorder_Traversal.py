@@ -15,10 +15,15 @@ Created on Thu Aug  4 16:22:36 2022
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         
-        new = []
-        if root:
-            new.inorderTraversal(root.left)
-            new.append(root.val)
-            new.inorderTraversal(root.right)
-        return new
+        final = []
+        
+        def traverse(root):
+            if not root: return
+            
+            traverse(root.left)
+            final.append(root.val)
+            traverse(root.right)
+            
+        traverse(root)
+        return final
 

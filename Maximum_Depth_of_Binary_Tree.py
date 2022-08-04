@@ -5,7 +5,6 @@ Created on Thu Aug  4 17:06:34 2022
 
 @author: jamescrisp
 """
-
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -19,12 +18,13 @@ class Solution:
         test = 0
         
         def depth(root):
-            global test
+            nonlocal test
+            nonlocal final
             
             if root is None: 
                 if test > final:
                     final = test
-                test = 0
+                test = 1
                 return
             
             test = test + 1

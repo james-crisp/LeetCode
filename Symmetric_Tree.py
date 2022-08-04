@@ -15,15 +15,15 @@ Created on Wed Aug  3 14:17:02 2022
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         
-        #recursive solve with binary tree
-        
-        
-        def check(node):       
-            if check(node.left) == check(node.right):   
+        def isMirror(root1, root2):
+            
+            if root1 == root2 and root1 is None:
                 return True
-            else:
-                return node.val
+            
+            if (root1 is not None and root2 is not None):
+                if root1.val == root2.val:
+                    return (isMirror(root1.left, root2.right) and isMirror(root1.right, root2.left))
+            
+            return False
         
-        
-        
-        return
+        return isMirror(root, root)

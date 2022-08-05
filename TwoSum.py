@@ -5,22 +5,22 @@ class Solution:
         done = False
         
         def tryit(numbers):
+            nonlocal done
             test = numbers[0]
             for j in range(1,len(numbers)):
                 if test + numbers[j] == target:
                     locations[1] = j
-                    print(locations)
                     done = True
-                    print("b")
-                    return locations
+                    return
             
         if done == False:
             for i in range(len(nums)):
                 locations[0] = i
                 tryit(nums[i:])
-        else:
-            print("a")
-            return locations
+                if done == True:
+                    return locations
+
+        
 
             
             

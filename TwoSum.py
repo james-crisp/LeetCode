@@ -9,7 +9,7 @@ class Solution:
             test = numbers[0]
             for j in range(1,len(numbers)):
                 if test + numbers[j] == target:
-                    locations[1] = j
+                    locations[1] = j + i
                     done = True
                     return
             

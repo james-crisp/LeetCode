@@ -9,16 +9,18 @@ class Solution:
             for j in range(1,len(numbers)):
                 if test + numbers[j] == target:
                     locations[1] = j
+                    print(locations)
                     done = True
-                    return
+                    print("b")
+                    return locations
             
-        if done == True:
-            print(locations)
-            return locations
-        else:
+        if done == False:
             for i in range(len(nums)):
                 locations[0] = i
                 tryit(nums[i:])
+        else:
+            print("a")
+            return locations
 
             
             

@@ -7,27 +7,26 @@ Created on Wed Jul 27 10:54:10 2022
 """
 
 class Solution:
-    import math
-    def intToRoman(self, num: int) -> str:
+    def romanToInt(self, s: str) -> int:
         
-        #Utilize a hash table
-        #Convert integer to roman numerals
+        roman = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
         
-        answer = []
+        IntSol = []
+        IntSol.append(roman[s[0]])
         
-        roman = {1:'I', 5:'V', 10:'X', 50:'L', 100:'C', 500:'D', 1000:'M'}
+        for x in range(1,len(s)):
+            if (s[x] == 'M' or s[x] == 'D') and (s[x-1] == 'C'):
+                IntSol.append(-200)
+            elif (s[x] == 'L' or s[x] == 'C') and (s[x-1] == 'X'):
+                IntSol.append(-20)
+            elif (s[x] == 'X' or s[x] == 'V') and (s[x-1] == 'I'):
+                IntSol.append(-2)
+            IntSol.append(roman[s[x]])
         
-        if (num/1000) > 0:
-            temp = math.floor(num/1000)
-            for i in range(temp):
-                answer.append(roman[1000])
-        if (num/100) >= 9:
-            answer.append(roman[100])
-            answer.append(roman[1000])
+        total = 0
+        for x in IntSol:
+            total = total + x
         
-        print(math.floor(8675/1000))
-        
-        print(roman[1])
-        
-        return answer
+        return total
+            
         

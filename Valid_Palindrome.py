@@ -14,7 +14,7 @@ class Solution:
         for x in s:
             if x.isalpha(): #check is it's a letter
                 lister.append(x.lower()) #add lowercase letter to list
-            elif isinstance(int(x),int):
+            elif x.isnumeric():
                 lister.append(x)
         
         if (len(lister) % 2) == 0: #even amount

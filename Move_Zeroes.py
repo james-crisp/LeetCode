@@ -11,20 +11,25 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        
+        counter = 0
         
         def flip(x):
-            
+            nonlocal counter
+            print(x)
             if nums[x] == 0:
+                counter += 1
                 flip(x+1)
             else:
-                nums[x-1] = nums[x]
-                nums[x] = 0
+                for i in range(counter):
+                    nums[x-(i+1)] = nums[x-i]
+                    nums[x-i] = 0
+                counter = 0
                 
+        #Exceeds range for end 0's        
         for x in range(len(nums)-1):
-            
-            flip(x)
             print(nums)
+            flip(x)
+            
             
         
         return

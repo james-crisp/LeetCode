@@ -12,10 +12,14 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         counter = 0
+        length_n = len(nums)
         
         def flip(x):
             nonlocal counter
-            print(x)
+            nonlocal length_n
+            
+            if x > length_n - 1:
+                return
             if nums[x] == 0:
                 counter += 1
                 flip(x+1)
@@ -25,9 +29,8 @@ class Solution:
                     nums[x-i] = 0
                 counter = 0
                 
-        #Exceeds range for end 0's        
+       
         for x in range(len(nums)-1):
-            print(nums)
             flip(x)
             
             

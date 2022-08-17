@@ -9,28 +9,28 @@ Created on Wed Aug 17 11:04:29 2022
 class Solution:
     def isValid(self, s: str) -> bool:
         
-        paranths = []
-        brackets = []
-        bracks = []
+        para = 0
+        brack = 0
+        curve = 0
         
         for char in s:
             if char == '(':
-                paranths.append(1)
+                para += 1
             elif char == ')':
-                paranths.append(2)
+                para -= 1
             elif char == '[':
-                brackets.append(1)
+                brack += 1
             elif char == ']':
-                brackets.append(2)
+                brack -= 1
             elif char == '{':
-                bracks.append(1)
+                curve += 1
             else:
-                bracks.append(2)
+                curve -= 1
         
-        def checker(numbers):
-            if numbers[0] == 2 or numbers[-1] == 1:
-                return False
+        if para != 0 or brack != 0 or curve != 0:
+            return False
+        else:
+            return True
             
+
             
-            
-        return

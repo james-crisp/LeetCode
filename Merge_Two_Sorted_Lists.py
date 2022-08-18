@@ -16,18 +16,25 @@ class Solution:
         
         #Linked list problem
         list3 = ListNode()
-            
-        def iterList(lister):
-            if lister == None:
-                return
-            else:
-                list3.val = lister.val
-                iterList(lister.next)
+        list3.val = 0
+        list3.next = ListNode()
+        list3.next.val = 4
         
-        iterList(list1)
-        iterList(list2)
+        def mergeIt(node):
+            
+            if list1.val < list2.val:
+                list3.val = list1.val
+            else:
+                list3.val = list2.val
+            
+            list3.next = ListNode()
+            mergeIt(list3.next)
+        
+        mergeIt(list3)
         
         return list3
+            
+        
             
         
         

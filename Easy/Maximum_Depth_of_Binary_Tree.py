@@ -14,24 +14,30 @@ Created on Thu Aug  4 17:06:34 2022
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         
-        final = 0
-        test = 0
+        counter = 0
+        temp = 0
         
-        def depth(root):
-            nonlocal test
-            nonlocal final
+        if root is None:
+            return 0
+        
+        def traverseTree(node):
+            nonlocal counter
+            nonlocal temp
             
-            if root is None: 
-                if test > final:
-                    final = test
-                test = 1
-                return
+            temp += 1
             
-            test = test + 1
-            depth(root.left)
-            depth(root.right)
-            return
+            if node is None:
+                if temp > counter:
+                    counter = temp
+                temp = 0
+                return 0
+            
+            
+            
+            return traverseTree(node.left) + node.val + traverseTree(node.right)
         
-        depth(root)
+        total = traverseTree(root)
         
-        return final
+        return counter
+        
+        

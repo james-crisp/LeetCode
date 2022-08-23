@@ -24,20 +24,24 @@ class Solution:
             nonlocal counter
             nonlocal temp
             
+            if node is None: return
+            
             temp += 1
-            
-            if node is None:
-                if temp > counter:
-                    counter = temp
-                temp = 0
-                return 0
-            
-            
-            
-            return traverseTree(node.left) + node.val + traverseTree(node.right)
+            if temp > counter:
+                counter = temp
+                print(counter)
+            if (node.left is None) and (node.right is None):
+                temp = 1
         
-        total = traverseTree(root)
+            traverseTree(node.left)
+            traverseTree(node.right)
+    
+            return
+        
+        traverseTree(root)
         
         return counter
+        
+        
         
         

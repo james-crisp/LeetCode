@@ -9,28 +9,28 @@ Created on Wed Aug 17 11:04:29 2022
 class Solution:
     def isValid(self, s: str) -> bool:
         
-        para = 0
-        brack = 0
-        curve = 0
+        length = len(s)
         
-        for char in s:
-            if char == '(':
-                para += 1
-            elif char == ')':
-                para -= 1
-            elif char == '[':
-                brack += 1
-            elif char == ']':
-                brack -= 1
-            elif char == '{':
-                curve += 1
-            else:
-                curve -= 1
-        
-        if para != 0 or brack != 0 or curve != 0:
+        if length % 2 != 0:
             return False
-        else:
-            return True
+        
+        parenHash = {")":"(","]":"[","}":"{"}
+        queue = []
+        
+        for x in range(length):
+            
+            if s[x] == '(' or s[x] == '[' or s[x] == "{":
+                queue.append(s[x])
+            elif s[x] == ')' or s[x] == "]" or s[x] == "}":
+                if len(queue) == 0:
+                    return False
+                if queue.pop() != parenHash[s[x]]:
+                    return False
+        
+        if len(queue) > 0:
+            return False
+        
+        return True
             
 
             

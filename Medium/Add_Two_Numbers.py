@@ -33,12 +33,15 @@ class Solution:
         
         findNumber(l2,number2)
         
-        number1 = ''.join(x for str(x) in number1)
+        num1 = ''.join(str(x) for x in number1)
+        num2 = ''.join(str(x) for x in number2)
+        num3 = int(num1) + int(num2)
+        num3 = str(num3)
         
-        print(number1)
         
         return
             
             
+        
         
         

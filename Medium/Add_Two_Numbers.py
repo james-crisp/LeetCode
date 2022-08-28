@@ -38,8 +38,23 @@ class Solution:
         num3 = int(num1) + int(num2)
         num3 = str(num3)
         
+        dumHead = ListNode(0)
+        timing = len(num3) - 1
+        def newLL(node,timer):
+            if timer == 0:
+                return
+            node.val = int(num3[timer])
+            print(node.val)
+            timer -= 1
+            node.next = ListNode(0)
+            newLL(node.next,timer)
         
-        return
+        newLL(dumHead,timing)
+        return dumHead.next
+            
+            
+        
+        
             
             
         

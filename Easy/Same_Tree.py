@@ -23,7 +23,6 @@ class Solution:
             if nodea is None and nodeb is None:
                 return
             elif nodea is None or nodeb is None:
-                print("check")
                 answer = False
                 return
             

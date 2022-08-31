@@ -15,19 +15,26 @@ Created on Tue Aug 30 21:07:51 2022
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         
+        answer = True
+        
         def checktree(nodea,nodeb):
+            nonlocal answer
             
             if nodea is None and nodeb is None:
                 return
             elif nodea is None or nodeb is None:
-                return False
+                print("check")
+                answer = False
+                return
             
             if nodea.val != nodeb.val:
-                return False
+                answer = False
+                return
             
             checktree(nodea.left,nodeb.left)
             checktree(nodea.right,nodeb.right)
-            
-            return True
         
-        return checktree(p,q)
+            return
+        
+        checktree(p,q)
+        return answer

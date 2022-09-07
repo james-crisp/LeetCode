@@ -36,5 +36,12 @@ class Solution:
             return
         
         removeIt(head)
+        removeIt(head)
+        
+        if head is None:
+            return None
+        
+        if head.val == val:
+            return None
         
         return head

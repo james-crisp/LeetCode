@@ -14,6 +14,11 @@ Created on Wed Sep  7 18:31:50 2022
 class Solution:
     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
         
+        if head is None:
+            return head
+        
+        if head.val == val:
+            head = head.next
         
         def removeIt(node):
             
@@ -23,14 +28,10 @@ class Solution:
             if node.next is None:
                 return
             
-            if node.val == val:
-                print(node.val)
-                temp = node
-                node = node.next
-                removeIt(node)
-            else:
-                print(node.val)
-                removeIt(node.next)
+            if node.next.val == val:
+                node.next = node.next.next
+            
+            removeIt(node.next)
             
             return
         

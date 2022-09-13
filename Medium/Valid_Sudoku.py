@@ -18,7 +18,8 @@ class Solution:
                 
                 for j in sudo[i]:
                     
-                    if isinstance(j,int):
+                    if j.isdigit():
+                        
                         temparray[int(j)-1] += 1
                         if temparray[int(j)-1] > 1:
                             return False
@@ -32,16 +33,15 @@ class Solution:
                 temparray = array.copy()
                 
                 for j in range(len(sudo)):
-                    #print(sudo[j][i])
-                    #print(temparray)
-                    if isinstance(sudo[j][i],int):
-                        print(temparray)
+                    
+                    if sudo[j][i].isdigit():
+                        
                         temparray[int(sudo[j][i])-1] += 1
                         if temparray[int(sudo[j][i])-1] > 1:
                             return False
             return True
         
-        print(checkColumns(board))
+        
         if checkColumns(board) == False:
             return False
         

@@ -46,11 +46,39 @@ class Solution:
             return False
         
         def checkBoxes(sudo):
+            #First 3 boxes
             for x in range(3):
                 temparray = array.copy()
                 for i in range(3):
                     for j in range(3):
                         
+                        if sudo[i][j+x*3].isdigit():
+                        
+                            temparray[int(sudo[i][j+x*3])-1] += 1
+                            if temparray[int(sudo[i][j+x*3])-1] > 1:
+                                return False
+            #Second 3 boxes
+            for x in range(3):
+                temparray = array.copy()
+                for i in range(3,6):
+                    for j in range(3):
+                        
+                        if sudo[i][j+x*3].isdigit():
+                        
+                            temparray[int(sudo[i][j+x*3])-1] += 1
+                            if temparray[int(sudo[i][j+x*3])-1] > 1:
+                                return False
+            #Third 3 boxes
+            for x in range(3):
+                temparray = array.copy()
+                for i in range(6,9):
+                    for j in range(3):
+                        
+                        if sudo[i][j+x*3].isdigit():
+                        
+                            temparray[int(sudo[i][j+x*3])-1] += 1
+                            if temparray[int(sudo[i][j+x*3])-1] > 1:
+                                return False
                     
         
         if checkBoxes(board) == False:

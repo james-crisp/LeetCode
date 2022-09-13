@@ -45,4 +45,15 @@ class Solution:
         if checkColumns(board) == False:
             return False
         
+        def checkBoxes(sudo):
+            for x in range(3):
+                temparray = array.copy()
+                for i in range(3):
+                    for j in range(3):
+                        
+                    
+        
+        if checkBoxes(board) == False:
+            return False
+        
         return True

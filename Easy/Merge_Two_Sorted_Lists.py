@@ -24,14 +24,19 @@ class Solution:
         dummy = ListNode()
         currentNode = dummy
         
-        while list1 is not None and list2 is not None:
-            if list1.val <= list2.val:
+        while list1 and list2:
+            if list1.val < list2.val:
+                currentNode.next = list1
                 list1 = list1.next
+                currentNode = list1
             
             else:
-                list1 = list2
+                currentNode.next = list2
+                list2 = list2.next
+                currentNode = list2
         
-        return list1
+        return dummy.next
+            
             
             
             

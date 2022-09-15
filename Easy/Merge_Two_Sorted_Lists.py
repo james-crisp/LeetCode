@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Aug  1 10:51:42 2022
+Created on Thu Sep 15 09:35:41 2022
 
 @author: jamescrisp
 """
@@ -15,26 +15,25 @@ class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         
         #Linked list problem
-        list3 = ListNode()
-        list3.val = 0
-        list3.next = ListNode()
-        list3.next.val = 4
         
-        def mergeIt(node):
+        if list1 is None:
+            return list2
+        if list2 is None:
+            return list1
+        
+        dummy = ListNode()
+        currentNode = dummy
+        
+        while list1 is not None and list2 is not None:
+            if list1.val <= list2.val:
+                list1 = list1.next
             
-            if list1.val < list2.val:
-                list3.val = list1.val
             else:
-                list3.val = list2.val
+                list1 = list2
+        
+        return list1
             
-            list3.next = ListNode()
-            mergeIt(list3.next)
-        
-        mergeIt(list3)
-        
-        return list3
             
-        
             
-        
+            
         

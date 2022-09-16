@@ -12,6 +12,14 @@ class Solution:
         for i in range(len(nums)):
             num_in_num = nums.count(nums[i])
             if num_in_num > 1:
-                for x in range(num_in_num - 1):
-                    if 
                 
+                previndex = 0
+                
+                for x in range(num_in_num - 1):
+                    
+                    indexx = nums.index(nums[i],previndex,len(nums))
+                    if abs(i - indexx) <= k:
+                        return True
+                    previndex = indexx
+        
+        return False

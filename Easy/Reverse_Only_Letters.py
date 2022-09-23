@@ -10,15 +10,28 @@ class Solution:
     def reverseOnlyLetters(self, s: str) -> str:
         
         count = -1
+        list1 = list(s)
         
         for i in range(int(len(s)/2)):
             
             if s[i].isalpha():
-                while !s[-i+count].isalpha:
+                
+                while not s[count].isalpha():
+                    print('a')
                     count -= 1
                 
                 temp = s[i]
-                s[i] = s[-i+count]
-                s[-i+count] = s[i]
+                list1[i] = s[count]
+                list1[count] = s[i]
+        
+        s = ''.join(list1)
+        
+        return s
+        
+        
+        
+            
+                
+                    
                 
                     

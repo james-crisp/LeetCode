@@ -9,24 +9,26 @@ Created on Thu Sep 22 21:50:48 2022
 class Solution:
     def reverseOnlyLetters(self, s: str) -> str:
         
-        count = -1
-        list1 = list(s)
+        queue = []
+        final = list(s)
         
-        for i in range(int(len(s)/2)):
-            
-            if s[i].isalpha():
-                
-                while not s[count].isalpha():
-                    print('a')
-                    count -= 1
-                
-                temp = s[i]
-                list1[i] = s[count]
-                list1[count] = s[i]
+        for char in s:
+            if char.isalpha():
+                queue.append(char)
         
-        s = ''.join(list1)
+        for i in range(len(final)):
+            if final[i].isalpha():
+                final[i] = queue.pop(-1)
+                
+        s = ''.join(final)
         
         return s
+        
+        
+        
+            
+                
+                    
         
         
         

@@ -25,5 +25,10 @@ class Solution:
         x = 1
         
         while x < length_word:
+            final_word.append(s[x])
+            x = x*3
             
         return
+        
+            
+        

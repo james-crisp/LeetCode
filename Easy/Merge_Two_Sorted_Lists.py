@@ -16,9 +16,7 @@ class Solution:
         
         #Linked list problem
         
-        currentNode = headHold = ListNode()
-        
-        
+        currentNode = dummy = ListNode()
         
         while list1 and list2:
             if list1.val < list2.val:
@@ -36,13 +34,15 @@ class Solution:
                 
         
         if list1 or list2: 
-            if list2 is None:
-                currentNode = list1 
-            else: 
-                currentNode = list2
+            currentNode = list1 if list1 else list2
             print(currentNode.val)
         
-        return headHold.next
+        return dummy.next
+            
+            
+            
+            
+        
             
             
             

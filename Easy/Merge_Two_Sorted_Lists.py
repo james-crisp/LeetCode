@@ -20,24 +20,31 @@ class Solution:
         
         while list1 and list2:
             if list1.val < list2.val:
-                currentNode = list1
-                print(currentNode.val)
+                currentNode.next = list1
                 list1 = list1.next
                 currentNode = currentNode.next
                 
             
             else:
-                currentNode = list2
-                print(currentNode.val)
+                currentNode.next = list2
                 list2 = list2.next
                 currentNode = currentNode.next
                 
         
         if list1 or list2: 
-            currentNode = list1 if list1 else list2
-            print(currentNode.val)
+            currentNode.next = list1 if list1 else list2
         
-        return dummy
+        return dummy.next
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
             
             
             

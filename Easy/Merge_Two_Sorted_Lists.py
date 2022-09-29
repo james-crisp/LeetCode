@@ -16,7 +16,9 @@ class Solution:
         
         #Linked list problem
         
-        currentNode = dummy = ListNode()
+        currentNode = ListNode()
+        dummy = ListNode()
+        currentNode = dummy
         
         while list1 and list2:
             if list1.val < list2.val:
@@ -38,6 +40,11 @@ class Solution:
             print(currentNode.val)
         
         return dummy.next
+            
+            
+            
+            
+        
             
             
             

@@ -21,6 +21,7 @@ class Solution:
         while head:
             if head.val == temp:
                 head = head.next
+                cur.next = head
             else:
                 cur.next = head
                 temp = head.val
@@ -29,6 +30,11 @@ class Solution:
             
         
         return dummy.next
+        
+        
+            
+        
+        
         
         
             

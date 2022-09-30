@@ -16,19 +16,25 @@ class Solution:
         
         cur = dummy = ListNode()
         
-        temp = None
+        temp = head.val
         cur.next = head
+        head = head.next
         
         while head:
             if head.val == temp:
                 head = head.next
             else:
-                cur = head
+                cur.next = head
                 temp = head.val
                 head = head.next
             
         
-        return dummy.next.next
+        return dummy.next
+        
+        
+            
+        
+        
         
         
             

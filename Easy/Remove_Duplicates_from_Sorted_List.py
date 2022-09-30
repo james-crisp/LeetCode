@@ -16,10 +16,7 @@ class Solution:
         
         cur = dummy = ListNode()
         
-        temp = head.val
-        cur = cur.next
-        cur = head
-        head = head.next
+        temp = -101
         
         while head:
             if head.val == temp:
@@ -28,9 +25,14 @@ class Solution:
                 cur.next = head
                 temp = head.val
                 head = head.next
+                cur = cur.next
             
         
         return dummy.next
+        
+        
+            
+        
         
         
             

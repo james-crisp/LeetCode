@@ -26,18 +26,24 @@ class Solution:
             test = test.next
         
         #Remove Nth Node
-        count = count - n
+        if count == 1 and n == 1:
+            return dummy.next
+        count = count - n + 1
         count2 = 0
         while head:
+            count2 += 1
+            #print(count)
+            #print(count2)
             if count2 == count:
                 cur.next = head.next
-                head = head.next
+                head = head.next.next
                 cur = cur.next
             else:
                 cur.next = head
                 head = head.next
                 cur = cur.next
             
+        
         
         return dummy.next
                     

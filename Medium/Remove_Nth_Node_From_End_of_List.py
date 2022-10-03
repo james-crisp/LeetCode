@@ -14,15 +14,30 @@ Created on Sat Oct  1 19:49:48 2022
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         
+        test = head
         cur = dummy = ListNode()
-        queue = []
         
-        count = n
         
+        count = 0
+        
+        #Count how long linked list is
+        while test:
+            count += 1
+            test = test.next
+        
+        #Remove Nth Node
+        count = count - n
+        count2 = 0
         while head:
+            if count2 == count:
+                cur.next = head.next
+                head = head.next
+                cur = cur.next
+            else:
+                cur.next = head
+                head = head.next
+                cur = cur.next
             
-            if head.next is None:
-                
-                queue[0].next = queue
-                while count > 0:
+        
+        return dummy.next
                     

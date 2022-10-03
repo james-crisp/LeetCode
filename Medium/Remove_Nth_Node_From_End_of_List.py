@@ -17,7 +17,6 @@ class Solution:
         test = head
         cur = dummy = ListNode()
         
-        
         count = 0
         
         #Count how long linked list is
@@ -30,20 +29,22 @@ class Solution:
             return dummy.next
         count = count - n + 1
         count2 = 0
+        
         while head:
             count2 += 1
-            #print(count)
-            #print(count2)
+            
             if count2 == count:
                 cur.next = head.next
-                head = head.next.next
-                cur = cur.next
+                #Catches if on the final node
+                if head.next is None:
+                    head = head.next
+                else:
+                    head = head.next.next
+                    cur = cur.next
             else:
                 cur.next = head
                 head = head.next
                 cur = cur.next
             
-        
-        
         return dummy.next
                     

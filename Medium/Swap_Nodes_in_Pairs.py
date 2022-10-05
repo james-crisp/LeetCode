@@ -18,11 +18,12 @@ class Solution:
         
         while head:
             print('a')
-            cur.next = head.next
-            cur = cur.next
-            cur.next = head
-            cur = cur.next
+            #cur.next = head.next
+            #cur = cur.next
+            #cur.next = head
+            #cur = cur.next
             head = head.next
-            head = head.next
+            print(head.val)
+            
         
         return dummy.next

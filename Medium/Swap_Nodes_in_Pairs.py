@@ -18,9 +18,9 @@ class Solution:
         
         while head:
             print('a')
-            #cur.next = head.next
-            #cur = cur.next
-            #cur.next = head
+            cur.next = head.next
+            cur = cur.next
+            cur.next = head
             #cur = cur.next
             head = head.next
             print(head.val)

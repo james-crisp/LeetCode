@@ -14,14 +14,15 @@ Created on Tue Oct  4 21:13:15 2022
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        cur = dummy = ListNode()
+        cur = dummy = prev = ListNode()
         
         while head:
             print('a')
+            prev = head
             cur.next = head.next
             cur = cur.next
-            cur.next = head
-            #cur = cur.next
+            cur.next = prev
+            cur = cur.next
             head = head.next
             print(head.val)
             

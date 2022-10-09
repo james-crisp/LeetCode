@@ -12,7 +12,7 @@ class Solution:
         #modify the array 
         
         
-        for i in range(len(nums)-2):
+        for i in range(len(nums)-1):
             k = 1
             while nums[i] == nums[i+k]:
                 if k+i == len(nums) - 1:
@@ -20,13 +20,18 @@ class Solution:
                 nums[i+k] = nums[i] + 1
                 k += 1
                 
-            
+            if k+i == len(nums) - 1:
+                break
             nums[i+1] = nums[i] + 1
         
-        count = 0
-        for i in range(len(nums)):
-            if
+        count = 1
+        for i in range(len(nums)-1):
+            if nums[i] == nums[i+1]:
+                return count
+            count += 1
         
-        return
+        return count
+            
+        
             
         

@@ -17,12 +17,12 @@ class Solution:
         cur = dummy = ListNode()
         
         value = head.val
-        print(value)
+        
         while head:
-            print(value)
             if head.next is None:
                 cur.next = head
-            elif value == head.next.val:
+                head = head.next
+            elif value == head.val:
                 head = head.next
             else:
                 value = head.val

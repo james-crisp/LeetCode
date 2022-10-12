@@ -17,9 +17,16 @@ class Solution:
         cur = dummy = ListNode()
         start = head
         
-        while head:
+        count = k
+        
+        while count > 0:
             if head.next is None:
-                head.next = start
+                cur.next = head
+                head = start
+                count -= 1
+                cur = cur.next
+            cur.next = head
             head = head.next
+            cur = cur.next
             
-        return cur
+        return dummy.next

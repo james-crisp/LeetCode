@@ -14,18 +14,14 @@ Created on Wed Aug 10 19:14:55 2022
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        reversedList = ListNode()
+        if head is None:
+            return
         
-        def reverseIt(node):
-            if node is None: return
-            
-            reversedList.next = ListNode(node.val)
-            reverseIt(node.next)
-            
-            
-        reverseIt(head)
+        head = head.next
         
-        return reversedList
+        reverseList(head)
+        
+        return head
             
             
         

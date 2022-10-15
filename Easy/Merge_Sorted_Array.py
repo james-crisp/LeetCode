@@ -12,11 +12,11 @@ class Solution:
         Do not return anything, modify nums1 in-place instead.
         """
         
-        for i in nums2:
-            for j in nums1:
-                if i <= j:
-                    temp = j
-                    nums1[nums1.find(j)] = i 
-            
-        return
+        for number in nums2:
+            for i in range(len(nums1)):
+                if number < nums1[i]:
+                    nums1[i+1] = nums1[i]
+                    nums1[i] = number
+        
+        return nums1
         

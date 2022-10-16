@@ -14,14 +14,25 @@ Created on Wed Aug 10 19:14:55 2022
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        if head is None:
-            return
+        #previous, current and next nodes
         
-        head = head.next
+        nextt = ListNode(None)
+        prev = ListNode(None)
+        #cur = ListNode()
+        cur = head
         
-        reverseList(head)
+        while cur:
+            nextt = cur.next
+            cur.next = prev
+            prev = cur
+            cur = nextt
+            
+        return prev
         
-        return head
+        
+            
+            
+        
             
             
         

@@ -17,17 +17,22 @@ class Solution:
         #previous, current and next nodes
         
         nextt = ListNode(None)
-        prev = ListNode(None)
+        prev = ListNode()
         #cur = ListNode()
         cur = head
         
         while cur:
             nextt = cur.next
-            cur.next = prev
-            prev = cur
+            cur.next = prev.next
+            prev.next = cur
             cur = nextt
             
-        return prev
+        return prev.next
+        
+        
+            
+            
+        
         
         
             

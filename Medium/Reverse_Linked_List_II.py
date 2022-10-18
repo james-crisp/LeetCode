@@ -14,22 +14,27 @@ Created on Mon Oct 17 21:27:35 2022
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         
+        if left == right:
+            return head
+        
         nextt = ListNode()
         prev = ListNode()
         
         cur = head
         counter = 0
+        
+        if left > 1:
+            for i in range(left-1):
+                prev.next = head
+                prev = prev.next
+        
         while cur:
-            counter += 1
-            if left <= counter:
-                nextt = cur.next
-                cur.next = prev.next
-                prev.next = cur
-                cur = nextt
-            else:
-                prev.next = cur
-                cur = nextt
+            nextt = cur.next
+            cur.next = prev.next
+            prev.next = cur
+            cur = nextt
         
         return prev.next
             
+        
         

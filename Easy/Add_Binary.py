@@ -11,12 +11,14 @@ class Solution:
         
         carry = 0
         
-        final = []
+        aa = list(a)
+        bb = list(b)
         
-        while a and b:
-            final = a + b
-            if carry == 1:
-                final[i+1] = 1
+        while a or b or carry:
+            if a:
+                aa += 1
+            if b:
+                bb += 1
             
             
         return final

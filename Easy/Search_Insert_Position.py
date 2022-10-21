@@ -12,19 +12,24 @@ class Solution:
         #Binary search
         lowerbound = 0
         midpoint = 0
-        upperbound = len(nums)
+        upperbound = len(nums) - 1
         
-        if len(nums) % 2 == 0:
-            midpoint = int(len(nums)/2)
-            
+        
+        
+        while lowerbound != upperbound:
+            midpoint = int((upperbound-lowerbound)/2)
+            print(midpoint)
             if nums[midpoint] == target:
                 return midpoint
-            elif nums[midpoint] > target:
-                lowerbound = 0
-            else:
+            elif nums[midpoint] < target:
                 lowerbound = midpoint
+            else:
+                upperbound = midpoint
         
-        return
+        return lowerbound+1
+                
+            
+            
                 
             
             

@@ -16,6 +16,10 @@ class Solution:
         
         if target > nums[upperbound]:
             return upperbound+1
+        if target < nums[lowerbound]:
+            return 0
+        if target == nums[0]:
+            return 0
         
         while lowerbound != upperbound:
             midpoint = int((upperbound+lowerbound)/2)
@@ -29,6 +33,9 @@ class Solution:
                 upperbound = midpoint
         
         return lowerbound+1
+                
+            
+            
                 
             
             

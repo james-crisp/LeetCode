@@ -14,7 +14,8 @@ class Solution:
         midpoint = 0
         upperbound = len(nums) - 1
         
-        
+        if target > nums[upperbound]:
+            return upperbound+1
         
         while lowerbound != upperbound:
             midpoint = int((upperbound+lowerbound)/2)
@@ -31,7 +32,6 @@ class Solution:
                 
             
             
-                
             
             
                 

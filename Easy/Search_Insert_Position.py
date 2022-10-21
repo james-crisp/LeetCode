@@ -18,7 +18,8 @@ class Solution:
         
         while lowerbound != upperbound:
             midpoint = int((upperbound-lowerbound)/2)
-            print(midpoint)
+            if lowerbound == midpoint:
+                return lowerbound+1
             if nums[midpoint] == target:
                 return midpoint
             elif nums[midpoint] < target:
@@ -27,6 +28,9 @@ class Solution:
                 upperbound = midpoint
         
         return lowerbound+1
+                
+            
+            
                 
             
             

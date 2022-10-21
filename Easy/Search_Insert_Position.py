@@ -17,7 +17,7 @@ class Solution:
         
         
         while lowerbound != upperbound:
-            midpoint = int((upperbound-lowerbound)/2)
+            midpoint = int((upperbound+lowerbound)/2)
             if lowerbound == midpoint:
                 return lowerbound+1
             if nums[midpoint] == target:

@@ -10,15 +10,18 @@ class Solution:
     def addBinary(self, a: str, b: str) -> str:
         
         carry = 0
+        final = ''
         
         aa = list(a)
         bb = list(b)
         
         while a or b or carry:
             if a:
-                aa += 1
+                carry += int(aa.pop(-1))
             if b:
-                bb += 1
+                carry += int(bb.pop(-1))
             
+            final.append(carry)
             
+        
         return final

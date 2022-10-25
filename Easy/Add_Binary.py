@@ -16,12 +16,14 @@ class Solution:
         bb = list(b)
         
         while a or b or carry:
-            if a:
-                carry += int(aa.pop(-1))
-            if b:
-                carry += int(bb.pop(-1))
+            if aa:
+                carry += int(aa.pop())
+            print(b)
+            if bb:
+                carry += int(bb.pop())
             
-            final.append(carry)
+            final += str(carry %2)
+            carry = carry//2
             
         
         return final

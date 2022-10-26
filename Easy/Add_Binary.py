@@ -15,15 +15,15 @@ class Solution:
         aa = list(a)
         bb = list(b)
         
-        while a or b or carry:
+        while aa or bb or carry:
             if aa:
                 carry += int(aa.pop())
-            print(b)
+            #print(aa,bb,carry)
             if bb:
                 carry += int(bb.pop())
             
             final += str(carry %2)
-            carry = carry//2
+            carry //= 2
             
         
-        return final
+        return final[::-1]

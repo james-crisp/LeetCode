@@ -12,7 +12,8 @@ class Solution:
         a = b = 1
         
         for i in range(n):
-            a = b
+            temp = b
             b = a+b
+            a = temp
         
         return a

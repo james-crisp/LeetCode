@@ -12,11 +12,16 @@ class Solution:
         Do not return anything, modify nums1 in-place instead.
         """
         
-        for number in nums2:
-            for i in range(len(nums1)):
-                if number < nums1[i]:
-                    nums1[i+1] = nums1[i]
-                    nums1[i] = number
+        
+        #Start from the end
+        
+        while n > 0:
+            if nums2[n-1] > nums1[m+n-1]:
+                nums1[m+n-1] = nums2[n-1]
+                n -= 1
+            else:
+                nums1[m+n-1] = nums1[m-1]
+                m -= 1
         
         return nums1
         

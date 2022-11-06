@@ -13,37 +13,18 @@ class Solution:
         
         #How to calculate without iterating through each and ever volume?
         
-        area = 0
-
-        left = 0
-        right = 1
-        middle = right-left
+        i = 0
+        j = len(height)-1
+        water = 0
         
-        def findArea (l,r,m):
+        while i != j:
+            water = max(water,(j-i)*min(height[i],height[j]))
             
-            if height[l] <= height[r]:
-                return height[l]*height[l]*m
+            if height[i] <= height[j]:
+                i+=1
             else:
-                return height[l]*height[l]*m
+                j-=1
         
-        area = findArea(left,right,middle)
-        print(area)
+        return water
             
-        for i in range(2,len(height)):
-            
-            if height[i] > height[left] or height[i] > height[right]:
-                templeft = right
-                tempright = i
-                tempmiddle = tempright - templeft
-            
-            temp_area = findArea(templeft,tempright,tempmiddle)
-            print(temp_area)
-            
-            if temp_area > area:
-                area = temp_area
-                left = templeft
-                right = tempright
-                middle = tempmiddle
-        
-        return area
             

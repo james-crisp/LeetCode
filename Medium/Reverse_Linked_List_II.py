@@ -30,11 +30,12 @@ class Solution:
         
         while cur:
             nextt = cur.next
-            cur.next = prev.next
-            prev.next = cur
+            cur.next, prev.next = prev.next, cur
             cur = nextt
         
         return prev.next
+            
+        
             
         
         

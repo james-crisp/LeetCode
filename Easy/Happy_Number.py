@@ -9,23 +9,18 @@ Created on Tue Aug  9 11:13:51 2022
 class Solution:
     def isHappy(self, n: int) -> bool:
         
-        first = str(n)
+        k = 0
+        current_number = list(str(n))
         
-        def tester(number):
-            number_string = str(number)
-            
+        while k < 100:
             total = 0
-            for x in range(len(number_string)):
-                total = total + int(number_string[x])**2
-            print(total)
-            
+            for sub_number in current_number:
+                total+=(int(sub_number)**2)
             if total == 1:
                 return True
             else:
-                tester(total)
-                
-        boolean = bool(tester(n))
-        print(boolean)
+                current_number = list(str(total))
+            k+=1
         
-        return tester(n)
+        return False
                 

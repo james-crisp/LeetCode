@@ -16,9 +16,11 @@ class Solution:
         if len(digits) == 0:
             return []
         if len(digits) == 1:
-            return number_map[0]
+            return list(number_map[digits[0]])
         
-        prev = self.letterCombinations(number_map[:-1])
+        prev = self.letterCombinations(digits[:-1])
+        additional = number_map[digits[-1]]
         
-        return [c+b for c in prev for b in ]
+        return [c+b for c in prev for b in additional]
+        
         

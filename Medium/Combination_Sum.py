@@ -11,7 +11,7 @@ class Solution:
         
         #DFS
         ret = []
-        self.dfs(List,target,[],ret)
+        self.dfs(candidates,target,[],ret)
         return ret
     
     
@@ -19,10 +19,12 @@ class Solution:
         if target < 0:
             return
         if target == 0:
-            ret.append([])
+            ret.append(path)
             return
-        for i in range(len(nums)+1):
+        for i in range(len(nums)):
             self.dfs(nums[i:],target-nums[i],path+[nums[i]],ret)
+    
+                
     
                 
     

@@ -14,9 +14,14 @@ Created on Tue Oct  4 21:13:15 2022
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        cur = dummy = prev = ListNode()
+        if not head or not head.next:
+            return head
         
-        while head:
+        dummy = ListNode(0)
+        dummy.next = head
+        cur = dummy
+        
+        while cur.next and cur.next.next:
             print('a')
             prev = head
             cur.next = head.next

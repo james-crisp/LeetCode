@@ -15,20 +15,18 @@ Created on Sun Sep  4 19:20:01 2022
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         
-        count = 0
+        #count = 0
         
         def balance(node):
-            nonlocal count
+            #nonlocal count
             
             if node is None:
-                return
-            
-            if node.left is None:
+                return 0
                 
-            balance(node.left)
-            balance(node.right)
-            
+            left = balance(node.left)
+            right = balance(node.right)
+            if left == -1 or right == -1 or abs(left-right) > 1:
+                return -1
+            return 1 + max(left,right)
         
-        boolean = balance(root)
-        
-        return boolean
+        return balance(root) != -1

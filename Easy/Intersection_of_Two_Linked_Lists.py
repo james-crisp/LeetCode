@@ -20,14 +20,14 @@ class Solution:
         
         while curA != curB:
             
-            if curA:
+            if curA is None:
+                curA = headB
+            else:
                 curA = curA.next
-            else:
-                curA = headA
             
-            if curB:
-                curB = curB.next
+            if curB is None:
+                curB = headA
             else:
-                curB = headB
+                curB = curB.next
         
         return curA

@@ -21,15 +21,18 @@ class Solution:
             mid = (high+low) // 2
             if temp == mid:
                 break
-            print(mid)
             if nums[mid] > target:
                 high = mid
             else:
                 low = mid
             
+        if nums[mid] != target:
+            return [-1,-1]
         
         answer.append(mid)
-        answer.append(0)
+        while nums[mid] == target:
+            mid += 1
+        answer.append(mid-1)
         
         return answer
                 

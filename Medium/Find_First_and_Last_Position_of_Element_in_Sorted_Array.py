@@ -13,24 +13,25 @@ class Solution:
         
         low = 0
         high = len(nums) - 1
-        mid = high+low // 2
+        mid = 0
         answer = []
-        prev = 0
         
-        while mid != prev:
-            prev = mid
-            mid = high+low // 2
+        while nums[mid] != target:
+            temp = mid
+            mid = (high+low) // 2
+            if temp == mid:
+                break
             print(mid)
             if nums[mid] > target:
-                low = mid
-            elif nums[mid] < target:
                 high = mid
             else:
-                break
+                low = mid
+            
         
         answer.append(mid)
         answer.append(0)
         
         return answer
+                
                 
                 

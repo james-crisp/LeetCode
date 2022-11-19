@@ -20,14 +20,17 @@ class Solution:
         while mid != prev:
             prev = mid
             mid = high+low // 2
-            
+            print(mid)
             if nums[mid] > target:
                 low = mid
-            else:
+            elif nums[mid] < target:
                 high = mid
+            else:
+                break
         
         answer.append(mid)
         answer.append(0)
         
         return answer
+                
                 

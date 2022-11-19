@@ -12,10 +12,16 @@ class Solution:
         #binary search
         
         low = 0
-        high = len(nums) - 1
         mid = 0
+        high = len(nums) - 1
         answer = []
         
+        if len(nums) == 0:
+            return [-1,-1]
+        if len(nums) == 1:
+            if nums[0] == target:
+                return [0,0]
+            
         while nums[mid] != target:
             temp = mid
             mid = (high+low) // 2
@@ -35,6 +41,7 @@ class Solution:
         answer.append(mid-1)
         
         return answer
+                
                 
                 
                 

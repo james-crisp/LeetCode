@@ -38,9 +38,12 @@ class Solution:
         answer.append(mid)
         while nums[mid] == target:
             mid += 1
+            if mid == len(nums):
+                break
         answer.append(mid-1)
         
         return answer
+                
                 
                 
                 

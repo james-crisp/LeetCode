@@ -21,6 +21,13 @@ class Solution:
         if len(nums) == 1:
             if nums[0] == target:
                 return [0,0]
+        if len(nums) == 2:
+            if nums[low] == target and nums[high] == target:
+                return [0,1]
+            elif nums[low] == target:
+                return [0,0]
+            elif nums[high] == target:
+                return [1,1]
             
         while nums[mid] != target:
             temp = mid
@@ -31,7 +38,7 @@ class Solution:
                 high = mid
             else:
                 low = mid
-            
+        
         if nums[mid] != target:
             return [-1,-1]
         
@@ -43,6 +50,7 @@ class Solution:
         answer.append(mid-1)
         
         return answer
+                
                 
                 
                 

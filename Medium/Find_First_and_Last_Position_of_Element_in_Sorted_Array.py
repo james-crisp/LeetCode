@@ -32,9 +32,11 @@ class Solution:
         while nums[mid] != target:
             temp = mid
             mid = (high+low) // 2
-            if temp == mid:
+            if nums[mid] == target:
                 break
-            if nums[mid] > target:
+            elif temp == mid:
+                break
+            elif nums[mid] > target:
                 high = mid
             else:
                 low = mid
@@ -50,6 +52,7 @@ class Solution:
         answer.append(mid-1)
         
         return answer
+                
                 
                 
                 

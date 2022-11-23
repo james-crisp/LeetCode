@@ -12,39 +12,36 @@ class Solution:
         #binary search
         #separate left and right?
         
+        if len(nums) == 0: return [-1,-1]
+        
         def bnsleft(nums1,target1):
-            low = 0
-            high = len(nums) - 1
-            mid = 0
-            
-            while nums1 != target1:
+            low, high = 0, len(nums) - 1
+            mid,prev=0,0
+            while prev!=mid:
                 prev = mid
                 mid = (low+high) // 2
-                
-                if prev == mid:
-                    mid = -1
-                    break
                 if nums1[mid] > target1:
                     high = mid
                 else:
                     low = mid
-            return mid
+            return low - 1
             
             
         def bnsright(nums1,target1):
-            prev = mid
+            low, high = 0, len(nums) - 1
+            mid,prev=0,0
+            while prev!=mid:
+                prev = mid
                 mid = (low+high) // 2
-                
-                if prev == mid:
-                    mid = -1
-                    break
                 if nums1[mid] > target1:
                     high = mid
                 else:
                     low = mid
-            return mid
-        
-        return 
+            return high - 1
+        left = bnsleft(nums,target)
+        right = bnsright(nums,target)
+        if left == -1:right = -1
+        return [left,right]
                 
                 
                 

@@ -16,7 +16,8 @@ class Solution:
         
         def bnsleft(nums1,target1):
             low, high = 0, len(nums) - 1
-            mid,prev=0,0
+            mid = 0
+            prev = -1
             while prev!=mid:
                 prev = mid
                 mid = (low+high) // 2
@@ -29,7 +30,8 @@ class Solution:
             
         def bnsright(nums1,target1):
             low, high = 0, len(nums) - 1
-            mid,prev=0,0
+            mid = 0
+            prev = -1
             while prev!=mid:
                 prev = mid
                 mid = (low+high) // 2
@@ -40,6 +42,8 @@ class Solution:
             return high - 1
         left = bnsleft(nums,target)
         right = bnsright(nums,target)
+        print(left)
+        print(right)
         if left == -1:right = -1
         return [left,right]
                 

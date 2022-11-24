@@ -23,8 +23,10 @@ class Solution:
                 mid = (low+high) // 2
                 if nums1[mid] > target1:
                     high = mid
-                else:
+                elif nums1[mid] < target1:
                     low = mid
+                else:
+                    return mid
             return low - 1
             
             
@@ -37,8 +39,10 @@ class Solution:
                 mid = (low+high) // 2
                 if nums1[mid] > target1:
                     high = mid
-                else:
+                elif nums1[mid] < target1:
                     low = mid
+                else:
+                    return mid
             return high - 1
         left = bnsleft(nums,target)
         right = bnsright(nums,target)

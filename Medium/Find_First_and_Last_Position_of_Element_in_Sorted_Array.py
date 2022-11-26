@@ -48,7 +48,7 @@ class Solution:
                     low = mid
                 else:
                     return high - 1
-            return high - 1
+            return high
         left = bnsleft(nums,target)
         right = bnsright(nums,target)
         print(left)

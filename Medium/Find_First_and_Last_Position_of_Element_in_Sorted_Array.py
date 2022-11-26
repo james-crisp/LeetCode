@@ -46,8 +46,8 @@ class Solution:
             return high - 1
         left = bnsleft(nums,target)
         right = bnsright(nums,target)
-        print(left)
-        print(right)
+        #print(left)
+        #print(right)
         if left == -1:right = -1
         return [left,right]
                 

@@ -13,6 +13,11 @@ class Solution:
         #separate left and right?
         
         if len(nums) == 0: return [-1,-1]
+        if len(nums) == 1:
+            if target == nums[0]:
+                return [0,0]
+            else:
+                return [-1,-1]
         
         def bnsleft(nums1,target1):
             low, high = 0, len(nums) - 1
@@ -46,8 +51,8 @@ class Solution:
             return high - 1
         left = bnsleft(nums,target)
         right = bnsright(nums,target)
-        #print(left)
-        #print(right)
+        print(left)
+        print(right)
         if left == -1:right = -1
         return [left,right]
                 

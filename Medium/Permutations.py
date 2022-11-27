@@ -21,6 +21,7 @@ class Solution:
             return
         
         for j in range(2**len(nums)-2):
+            print(set_of_numbers)
             repeat(nums[-j])
         
         return set_of_numbers

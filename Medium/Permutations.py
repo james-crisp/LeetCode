@@ -12,8 +12,9 @@ class Solution:
         #recurison
         set_of_numbers = []
         #2^n-2
+        count = 0
             
-        def repeat(nums1):
+        def repeat(nums1,xfac):
             set_nums = []
             for i in range(len(nums)):
                 set_nums.append(nums[i])
@@ -22,6 +23,6 @@ class Solution:
         
         for j in range(2**len(nums)-2):
             print(set_of_numbers)
-            repeat(nums[-j])
+            repeat(nums,j)
         
         return set_of_numbers

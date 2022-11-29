@@ -19,7 +19,7 @@ class Solution:
                 test = False
                 for i in range(len(anagrams)):
                     if sorted(word) == sorted(anagrams[i]):
-                        anagrams[i].append(word)
+                        anagrams.append(word)
                         test = True
                         break
                 if test == False:

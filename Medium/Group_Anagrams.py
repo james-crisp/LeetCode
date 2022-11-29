@@ -13,16 +13,19 @@ class Solution:
         temp = []
         
         for word in strs:
-            
-            if len(temp) > 0:
-                if sorted(word) == sorted(temp[0]):
-                    temp.append(word)
-                else:
-                    anagrams.append(temp)
-                    temp.clear()
-                    temp.append(word)
+            #print(anagrams)
+            #print(temp)
+            if len(anagrams) > 0:
+                test = False
+                for i in range(len(anagrams)):
+                    if sorted(word) == sorted(anagrams[i]):
+                        anagrams[i].append(word)
+                        test = True
+                        break
+                if test == False:
+                    anagrams.append(word)
             else:
-                temp.append(word)
+                anagrams.append(word)
                 
             
             

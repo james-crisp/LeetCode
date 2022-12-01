@@ -10,7 +10,6 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         
         
-        
         anagrams = []
         temp = []
         
@@ -20,6 +19,9 @@ class Solution:
                 if sorted(word) == sorted(temp[0]):
                     temp.append(word)
                 else:
+                    for i in range(len(anagrams)):
+                        if sorted(word) == sorted(anagrams[i][0]):
+                            anagrams[i].append(word)
                     anagrams.append(temp.copy())
                     temp.clear()
                     temp.append(word)

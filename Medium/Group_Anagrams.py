@@ -13,21 +13,29 @@ class Solution:
         anagrams = []
         temp = []
         
-        for word in strs:
-            
+        for j in range(len(strs)):
+            word = strs[j]
             if len(temp) > 0:
                 if sorted(word) == sorted(temp[0]):
                     temp.append(word)
                 else:
+                    test = False
                     for i in range(len(anagrams)):
                         if sorted(word) == sorted(anagrams[i][0]):
                             anagrams[i].append(word)
-                    anagrams.append(temp.copy())
-                    temp.clear()
-                    temp.append(word)
+                            test = True
+                    print(word)
+                    print(test)
+                    if test == False:
+                        if j == len(strs)-1:
+                            anagrams.append([word])
+                        anagrams.append(temp.copy())
+                        temp.clear()
+                        temp.append(word)
             else:
                 temp.append(word)
-                
+        
+        
             
             
             

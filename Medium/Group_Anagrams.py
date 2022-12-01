@@ -9,6 +9,8 @@ Created on Tue Nov 29 18:16:15 2022
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         
+        if len(strs) == 1:
+            return [strs]
         
         anagrams = []
         temp = []
@@ -34,8 +36,6 @@ class Solution:
                         temp.append(word)
             else:
                 temp.append(word)
-        
-        
             
             
             

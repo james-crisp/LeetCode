@@ -12,17 +12,20 @@ class Solution:
         #recurison
         set_of_numbers = []
         #2^n-2
-        count = 0
-            
-        def repeat(nums1,xfac):
-            set_nums = []
-            for i in range(len(nums)):
-                set_nums.append(nums[i])
-            set_of_numbers.append(set_nums)
-            return
+        count1 = 0
         
-        for j in range(2**len(nums)-2):
-            print(set_of_numbers)
-            repeat(nums,j)
+        if len(nums) == 0:
+            return []
+        
+        if len(nums) == 1:
+            return [nums]
+        
+        for i in range(len(nums)):
+            m = nums[i]
+            remLst = nums[:i] + nums[i+1:]
+            
+            for p in self.permute(nums):
+                set_of_numbers([m] + p)
+            
         
         return set_of_numbers

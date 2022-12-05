@@ -9,23 +9,20 @@ Created on Sat Nov 26 20:32:45 2022
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         
-        #recurison
-        set_of_numbers = []
-        #2^n-2
-        count1 = 0
-        print(set_of_numbers)
-        if len(nums) == 0:
-            return []
-        
-        if len(nums) == 1:
-            return [nums]
-        
-        for i in range(len(nums)):
-            m = nums[i]
-            remLst = nums[:i] + nums[i+1:]
+        def permutations(sets,n):
+            if n == 0:
+                return [[]]
             
-            for p in self.permute(nums):
-                set_of_numbers([m] + p)
+            l = []
+            for i in range(0, len(sets)):
+                m = sets[i]
+                remLst = sets[i+1:]
+                
+                remainlst_combo = permutations(remLst,n-1)
+                for p in remainlst_combo:
+                    l.append([m, *p])
+            
+            return l
             
         
-        return set_of_numbers
+        return permutations(nums,3)

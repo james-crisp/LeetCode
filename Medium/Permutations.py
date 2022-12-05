@@ -13,7 +13,7 @@ class Solution:
         set_of_numbers = []
         #2^n-2
         count1 = 0
-        
+        print(set_of_numbers)
         if len(nums) == 0:
             return []
         

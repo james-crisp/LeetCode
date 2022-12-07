@@ -12,9 +12,12 @@ class Solution:
 
         final = []
 
-        if root is None:
-            return
+        def traverse(rooter):
+            if rooter is None: return
+            
+            final.append(rooter.val)
+            traverse(rooter.left)
+            traverse(rooter.right)
         
-        self.preorderTraversal(root.left)
-        self.preorderTraversal(root.right)
-        return root.val
+        traverse(root)
+        return final

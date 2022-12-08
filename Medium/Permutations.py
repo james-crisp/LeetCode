@@ -19,6 +19,7 @@ class Solution:
                 remLst = sets[i+1:]
                 
                 remainlst_combo = permutations(remLst,n-1)
+                print(remainlst_combo)
                 for p in remainlst_combo:
                     l.append([m, *p])
             

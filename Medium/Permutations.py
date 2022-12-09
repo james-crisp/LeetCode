@@ -22,8 +22,10 @@ class Solution:
                 print(remainlst_combo)
                 for p in remainlst_combo:
                     l.append([m, *p])
-            
+                print(l)
             return l
-            
+
+        answer = permutations([x for x in nums],len(nums))
         
-        return permutations(nums,3)
+
+        return answer

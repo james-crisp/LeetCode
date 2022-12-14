@@ -17,9 +17,9 @@ class Solution:
                 row_right += 1
                 #Last row_right will be out of range
             #Traverse down
-            elif col_down <= col_up:
-                spiral_order.append(matrix[col_down][row_right])
+            elif col_down < col_up:
                 col_down += 1
+                spiral_order.append(matrix[col_down][row_right-1])
                 #Last col_down will be out of range for next time
             #Traverse left
             elif row_left >= 0:
@@ -29,8 +29,15 @@ class Solution:
             elif col_up > 0:
                 spiral_order.append(matrix[col_up][row_left])
                 col_up -= 1
+            print(spiral_order)
         
         return spiral_order
+
+
+
+
+                
+
 
 
 

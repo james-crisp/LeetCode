@@ -27,11 +27,17 @@ class Solution:
                 row_left -= 1
             #Traverse up
             elif col_up > 0:
-                spiral_order.append(matrix[col_up][row_left])
                 col_up -= 1
+                spiral_order.append(matrix[col_up][row_left-1])
             print(spiral_order)
         
         return spiral_order
+
+
+
+
+                
+
 
 
 

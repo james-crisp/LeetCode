@@ -10,31 +10,35 @@ class Solution:
         col_down = 0
         col_up = len(matrix) - 1
 
-        while row_right < inf:
+        while row_right <= row_left and col_down <= col_up:
             #Traverse right
-            if row_right <= row_left:
-                spiral_order.append(matrix[col_down][row_right])
-                row_right += 1
+            for i in range(row_left):
+                spiral_order.append(matrix[row_right][i])
+            row_right += 1
                 
             #Traverse down
-            elif col_down < col_up:
-                col_down += 1
-                spiral_order.append(matrix[col_down][row_right-1])
+            for i in range(col_up):
+                spiral_order.append(matrix[i][row_left])
+            col_down += 1
                 
             #Traverse left
-            elif row_left > 0:
-                spiral_order.append(matrix[col_up][row_left - 1])
-                row_left -= 1
+            for i in range(row_left):
+                spiral_order.append(matrix[col_up][-i-1])
+            row_left -= 1
                 
             #Traverse up
-            elif col_up > 0:
-                col_up -= 1
-                spiral_order.append(matrix[col_up][row_left])
-                print(row_left)
-                print(row_right)
-            print(spiral_order)
+            for i in range(col_up):
+                spiral_order.append(matrix[-i-1][row_right-1])
+                print(spiral_order)
+            col_up -= 1
         
         return spiral_order
+
+
+
+
+                
+
 
 
 

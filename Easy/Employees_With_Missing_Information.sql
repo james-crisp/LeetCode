@@ -5,6 +5,12 @@
 
 # Write your MySQL query statement below
 
-SELECT employee_id
+# Write your MySQL query statement below
+
+SELECT
+    CASE WHEN Employees.employee_id != Salaries.employee_id
+        THEN Employees.employee_id
+    END
+    AS employee_id
 FROM Employees
-INNER JOIN Salaries ON Employees.employee_id=Salaries.employee_id;
+LEFT JOIN Salaries ON Employees.employee_id=Salaries.employee_id;

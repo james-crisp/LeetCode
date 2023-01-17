@@ -3,9 +3,9 @@
 
 # 178. Rank Scores
 
-# Write your MySQL query statement below
+/* Write your T-SQL query statement below */
 
 SELECT  score,
-        RANK() OVER(PARTITION BY score ORDER BY score DESC) rank
+        DENSE_RANK() OVER(ORDER BY score DESC) Rank
 FROM Scores
-ORDER BY score DESC;
+ORDER BY Rank;

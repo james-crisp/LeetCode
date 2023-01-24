@@ -6,4 +6,5 @@
 
 SELECT wt1.id
 FROM Weather wt1, Weather wt2
-WHERE wt1.Temperature > wt2.Tempeature;
+WHERE wt1.temperature > wt2.temperature
+    AND TO_DAYS(wt1.recordDate)-TO_DAYS(wt2.recordDate) = 1;
